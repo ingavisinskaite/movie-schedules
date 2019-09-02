@@ -1,18 +1,21 @@
 import React from 'react';
+import './style.less'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
- 
+
 interface State {
     cities: Array<string>;
     selectedCity: string;
-    startDate: Date;
+    selectedDate: Date;
+    showMovies: boolean;
 }
 
 interface Props { }
 
 
 class Select extends React.Component<Props, State> {
+    formattedDate: string;
 
     constructor(props: Props) {
         super(props);
@@ -20,12 +23,16 @@ class Select extends React.Component<Props, State> {
         this.state = {
             cities: ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys'],
             selectedCity: 'Vilnius',
-            startDate: new Date(),
-
+            selectedDate: new Date(),
+            showMovies: false,
         };
 
+        this.searchForMovies = this.searchForMovies.bind(this);
     }
 
+    componentDidMount() {
+        this.formatDate(this.state.selectedDate)
+    }
 
     showCitiesToSelect() {
         let cityOptions = [];
@@ -35,23 +42,49 @@ class Select extends React.Component<Props, State> {
         return cityOptions;
     }
 
-    handleDateChange = (date: Date) => {
+    handleDateChange = (date: Date): void => {
         this.setState({
-            startDate: date
+            selectedDate: date,
+            showMovies: false
         });
+        this.formatDate(date);
     };
+
+    selectCity(event: string): void {
+        this.setState({ 
+            selectedCity: event,
+            showMovies: false, 
+        });
+    }
+
+    formatDate(date: Date): string {
+        let options = {month: 'long', day: 'numeric'}
+        this.formattedDate = date.toLocaleDateString('en-US', options);
+        return this.formattedDate;
+    }
+
+    searchForMovies() {
+        this.setState({showMovies: true})
+    }
 
     render() {
         return (
             <div>
-                <select>
-                    {this.showCitiesToSelect()}
-                </select>
+                <div className="select">
+                    <select className="cityToSelect" onChange={event => this.selectCity(event.target.value)}>
+                        {this.showCitiesToSelect()}
+                    </select>
 
-                <DatePicker
-                    selected={this.state.startDate}
-                    onChange={this.handleDateChange}
-                />
+                    <DatePicker className="dateToSelect"
+                        selected={this.state.selectedDate}
+                        onChange={this.handleDateChange}
+                        minDate={new Date()}
+                    />
+
+                    <button className="search-btn" onClick={this.searchForMovies}>Search</button>
+                </div>
+                {this.state.showMovies ? <div className="movie-list"> <h1>On {this.formattedDate} in {this.state.selectedCity} we show</h1></div> : null}
+                
             </div>
         );
     }

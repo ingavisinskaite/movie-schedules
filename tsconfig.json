@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "lib": ["es2015", "dom", "es2015.promise"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

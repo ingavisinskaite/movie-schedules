@@ -40,7 +40,7 @@ module.exports = (_env, argv) => ({
             //     ]
             // },
             {
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,

@@ -7,6 +7,7 @@ import { ClassComp } from "./components/classComp/classComp";
 
 import "./App.less";
 import { FuncComp } from "./components/functionalComp/functionalComp";
+import Select from "./components/classComp/select";
 
 interface IState {
     settings?: ISettings;
@@ -25,11 +26,7 @@ class App extends React.Component<RouteComponentProps, IState> {
         const { settings } = this.state;
         return (
             <div>
-                <p>{settings.TestValue}</p>
-                <br/>
-                <ClassComp testNumber={42}/>
-                <br/>
-                <FuncComp testString={"Hey there"}/>
+                <Select />
             </div>
         );
     }

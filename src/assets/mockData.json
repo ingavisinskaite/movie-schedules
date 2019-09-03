@@ -1,0 +1,216 @@
+[
+    {
+        "date": "2019-09-03T00:00:00",
+        "movies": [
+            {
+                "title": "Fast and Furious 100",
+                "ltTitle": "Greiti ir įsiutę 100",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-03T12:50:00",
+                            "2019-09-03T14:00:00",
+                            "2019-09-03T16:00:00",
+                            "2019-09-03T18:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Forum cinemaSchedules Vingis",
+                        "times": [
+                            "2019-09-03T12:50:00",
+                            "2019-09-03T14:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Multikino",
+                        "times": [
+                            "2019-09-03T18:00:00"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "date": "2019-09-04T00:00:00",
+        "movies": [
+            {
+                "title": "Fast and Furious 100",
+                "ltTitle": "Greiti ir įsiutę 100",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-04T12:50:00",
+                            "2019-09-04T14:00:00",
+                            "2019-09-04T16:00:00",
+                            "2019-09-04T18:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Forum cinemaSchedules Vingis",
+                        "times": [
+                            "2019-09-04T12:50:00",
+                            "2019-09-04T14:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Multikino",
+                        "times": [
+                            "2019-09-04T18:00:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Finding Nemo",
+                "ltTitle": "Žuviukas Nemo",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-04T13:00:00",
+                            "2019-09-04T15:00:00",
+                            "2019-09-04T17:00:00",
+                            "2019-09-04T19:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Skalvija",
+                        "times": [
+                            "2019-09-04T18:00:00"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "date": "2019-09-05T00:00:00",
+        "movies": [
+            {
+                "title": "Fast and Furious 100",
+                "ltTitle": "Greiti ir įsiutę 100",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-05T12:50:00",
+                            "2019-09-05T14:00:00",
+                            "2019-09-05T16:00:00",
+                            "2019-09-05T18:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Forum cinemaSchedules Vingis",
+                        "times": [
+                            "2019-09-05T12:50:00",
+                            "2019-09-05T14:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Multikino",
+                        "times": [
+                            "2019-09-05T18:00:00"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "date": "2019-09-06T00:00:00",
+        "movies": [
+            {
+                "title": "Fast and Furious 100",
+                "ltTitle": "Greiti ir įsiutę 100",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-06T12:50:00",
+                            "2019-09-06T14:00:00",
+                            "2019-09-06T16:00:00",
+                            "2019-09-06T18:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Forum cinemaSchedules Vingis",
+                        "times": [
+                            "2019-09-06T12:50:00",
+                            "2019-09-06T14:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Multikino",
+                        "times": [
+                            "2019-09-06T18:00:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Finding Nemo",
+                "ltTitle": "Žuviukas Nemo",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-06T13:00:00",
+                            "2019-09-06T15:00:00",
+                            "2019-09-06T17:00:00",
+                            "2019-09-06T19:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Skalvija",
+                        "times": [
+                            "2019-09-06T18:00:00"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "date": "2019-09-07T00:00:00",
+        "movies": [
+            {
+                "title": "Fast and Furious 100",
+                "ltTitle": "Greiti ir įsiutę 100",
+                "imgSrc": "https://path_to_img",
+                "cinemaSchedules": [
+                    {
+                        "title": "Forum cinemaSchedules Akropolis",
+                        "times": [
+                            "2019-09-07T12:50:00",
+                            "2019-09-07T14:00:00",
+                            "2019-09-07T16:00:00",
+                            "2019-09-07T18:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Forum cinemaSchedules Vingis",
+                        "times": [
+                            "2019-09-07T12:50:00",
+                            "2019-09-07T14:00:00"
+                        ]
+                    },
+                    {
+                        "title": "Multikino",
+                        "times": [
+                            "2019-09-07T18:00:00"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

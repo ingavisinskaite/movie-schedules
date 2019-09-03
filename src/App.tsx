@@ -3,27 +3,42 @@ import { RouteComponentProps } from "react-router-dom";
 
 import { getConfig } from "./configs/config.settings";
 import { ISettings } from "./configs/config.settings.d";
-import { ClassComp } from "./components/classComp/classComp";
 
 import "./App.less";
-import { FuncComp } from "./components/functionalComp/functionalComp";
 import Select from "./components/classComp/select";
+import { MovieDay } from "./models/movieDay";
+import { getMovies } from "./services/movieService";
 
 interface IState {
     settings?: ISettings;
+    movieDays?: Array<MovieDay>;
 }
 
 class App extends React.Component<RouteComponentProps, IState> {
     readonly state: IState = {
-        settings: {}
+        settings: {},
+        movieDays: []
     };
 
     async componentWillMount() {
-        this.setState({ settings: (await getConfig()) });
+        const movieDays = await getMovies(new Date());
+        movieDays.forEach(md => {
+            md.date = new Date(md.date);
+            md.movies.forEach(m => {
+                m.cinemaSchedules.forEach(cs => {
+                    cs.times = cs.times.map(t => new Date(t));
+                })
+            })
+        })
+        this.setState({ 
+            settings: (await getConfig()),
+            movieDays: movieDays
+        });
     }
 
     render = () => {
-        const { settings } = this.state;
+        const { movieDays } = this.state;
+        console.log(movieDays);
         return (
             <div>
                 <Select />

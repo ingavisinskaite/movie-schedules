@@ -1,15 +1,18 @@
 import React from 'react';
 import './style.less'
+import { Movie } from '../../../models/movieDay';
+import MovieCard from '../movie-card';
 
 
 interface State {
 }
 
-interface Props { }
+interface Props {
+    movieList: Array<Movie>
+ }
 
 
 class MovieList extends React.Component<Props, State> {
-    formattedDate: string;
 
     constructor(props: Props) {
         super(props);
@@ -21,7 +24,11 @@ class MovieList extends React.Component<Props, State> {
     render() {
         return (
             <div>
-               
+                {
+                    this.props.movieList.map((movie, index) => {
+                        return <MovieCard key={index} info={movie}/>
+                    })
+                }
             </div>
         );
     }

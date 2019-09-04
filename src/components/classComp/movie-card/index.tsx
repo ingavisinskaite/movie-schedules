@@ -40,9 +40,9 @@ class MovieCard extends React.Component<Props, State> {
 
     render() {
         return (
-            <div>
-               <h1>{this.props.info.title}</h1>
-               <img src={this.props.info.imgSrc}></img>
+            <div className="movie-card">
+               <h2>{this.props.info.title}</h2>
+               <img className="movie-img" src={this.props.info.imgSrc}></img>
                {
                    this.props.info.cinemaSchedules.map((cinema, index) => {
                        return <div key={index}><p>{cinema.title}: {cinema.times.map(time => this.formatTime(time))}</p></div>

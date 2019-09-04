@@ -8,6 +8,7 @@ import "./App.less";
 import Select from "./components/select";
 import { MovieDay } from "./models/movieDay";
 import { getMovies } from "./services/movieService";
+import Parent from "./components/comp-interaction-example/parent";
 
 interface IState {
     settings?: ISettings;
@@ -41,7 +42,8 @@ class App extends React.Component<RouteComponentProps, IState> {
         console.log(movieDays);
         return (
             <div>
-                <Select />
+                {/* <Select /> */}
+                <Parent />
             </div>
         );
     }

@@ -5,7 +5,7 @@ import { getConfig } from "./configs/config.settings";
 import { ISettings } from "./configs/config.settings.d";
 
 import "./App.less";
-import Select from "./components/classComp/select";
+import Select from "./components/select";
 import { MovieDay } from "./models/movieDay";
 import { getMovies } from "./services/movieService";
 

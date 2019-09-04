@@ -2,9 +2,9 @@ import React from 'react';
 import './style.less'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { getMovies } from '../../../services/movieService';
-import { MovieDay, Movie, CinemaMovieSchedule } from '../../../models/movieDay';
-import { isSameDay } from '../../../services/calendarService';
+import { getMovies } from '../../services/movieService';
+import { MovieDay, Movie, CinemaMovieSchedule } from '../../models/movieDay';
+import { isSameDay } from '../../services/calendarService';
 import MovieList from '../movie-list';
 
 

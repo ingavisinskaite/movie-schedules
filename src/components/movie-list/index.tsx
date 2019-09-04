@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less'
-import { Movie } from '../../../models/movieDay';
+import { Movie } from '../../models/movieDay';
 import MovieCard from '../movie-card';
 
 

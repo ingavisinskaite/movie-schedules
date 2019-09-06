@@ -23,7 +23,7 @@ class MovieList extends React.Component<Props, State> {
 
     render() {
         return (
-            <div>
+            <div className="movie-list">
                 {
                     this.props.movieList.map((movie, index) => {
                         return <MovieCard key={index} info={movie}/>

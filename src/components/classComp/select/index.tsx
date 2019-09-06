@@ -12,6 +12,7 @@ interface State {
     cities: Array<string>;
     selectedCity: string;
     selectedDate: Date;
+    formattedDate: string;
     showMovies: boolean;
     movies: Array<Movie>;
 }
@@ -20,7 +21,6 @@ interface Props { }
 
 
 class Select extends React.Component<Props, State> {
-    formattedDate: string;
 
     constructor(props: Props) {
         super(props);
@@ -29,11 +29,11 @@ class Select extends React.Component<Props, State> {
             cities: ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevėžys'],
             selectedCity: 'Vilnius',
             selectedDate: new Date(),
+            formattedDate: '',
             showMovies: false,
             movies: [],
         };
 
-        this.searchForMovies = this.searchForMovies.bind(this);
     }
 
     componentDidMount() {
@@ -65,11 +65,11 @@ class Select extends React.Component<Props, State> {
 
     formatDate(date: Date): string {
         let options = { month: 'long', day: 'numeric' }
-        this.formattedDate = date.toLocaleDateString('en-US', options);
-        return this.formattedDate;
+        this.setState({formattedDate: date.toLocaleDateString('en-US', options)})
+        return this.state.formattedDate
     }
 
-    searchForMovies() {
+    searchForMovies = () => {
         this.setState({ showMovies: true });
         this.getMoviesByDay(this.state.selectedDate);
     }
@@ -86,18 +86,6 @@ class Select extends React.Component<Props, State> {
             return this.state.movies;
         });
     }
-
-    // async displayMovies() {
-    //     let movieLi = []
-    //     if (this.state.movies !== null) {
-    //         for (let movie of this.state.movies) {
-    //             movieLi.push(movie.title)
-    //         }
-    //         this.setState({movieList: movieLi})
-    //     } else {
-    //         console.log('Ups')
-    //     }
-    // }
 
     render() {
         return (
@@ -119,7 +107,7 @@ class Select extends React.Component<Props, State> {
                 {this.state.showMovies ?
                     <div>
                         <div className="movie-list-title">
-                            <h1>On {this.formattedDate} in {this.state.selectedCity} we show</h1>
+                            <h1>On {this.state.formattedDate} in {this.state.selectedCity} we show</h1>
                         </div>
                         <div className="movie-list">
                             <MovieList movieList={this.state.movies}/>

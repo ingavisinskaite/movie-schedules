@@ -5,12 +5,14 @@ import { getConfig } from "./configs/config.settings";
 import { ISettings } from "./configs/config.settings.d";
 
 import "./App.less";
-import Select from "./components/select";
+import SelectCity from "./components/select-city";
 import { MovieDay, Movie } from "./models/movieDay";
 import { getMovies } from "./services/movieService";
 import Parent from "./components/comp-interaction-example/parent";
 import MovieList from "./components/movie-list";
 import { isSameDay } from './services/calendarService'
+import { SelectDate } from "./components/select-date";
+import { SearchBtn } from "./components/search-btn";
 
 
 interface IState {
@@ -87,7 +89,9 @@ class App extends React.Component<RouteComponentProps, IState> {
         console.log(movieDays);
         return (
             <div>
-                <Select cities={this.state.cities} selectedDate={this.state.selectedDate} updateDate={this.handleDateChange} selectCity={this.selectCity} searchForMovies={this.searchForMovies}/>
+                <SelectCity cities={this.state.cities} selectCity={this.selectCity} />
+                <SelectDate selectedDate={this.state.selectedDate} updateDate={this.handleDateChange}/>
+                <SearchBtn searchForMovies={this.searchForMovies}/>
                 <div>
                     {
                         this.state.showMovies ?

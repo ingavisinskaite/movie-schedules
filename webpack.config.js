@@ -40,7 +40,7 @@ module.exports = (_env, argv) => ({
             //     ]
             // },
             {
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -61,7 +61,7 @@ module.exports = (_env, argv) => ({
             },
             {
                 type: "javascript/auto",
-                test: /config\.settings\.json$/,
+                test: /(config\.settings\.json|mockData\.json)$/,
                 loader: "file-loader",
                 options: {
                     name: "[name].[ext]?[hash]"

@@ -3,24 +3,16 @@ import './style.less'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
-interface State {
-
-}
-
 interface Props {
     cities: Array<string>;   
     selectCity: (selectedCity: string) => void;
  }
 
 
-class SelectCity extends React.Component<Props, State> {
+class SelectCity extends React.Component<Props, {}> {
 
     constructor(props: Props) {
         super(props);
-
-        this.state = {
-        };
     }
 
     showCitiesToSelect() {
@@ -35,7 +27,7 @@ class SelectCity extends React.Component<Props, State> {
     render() {
         return (
             <div>
-                <div className="select">
+                <div>
                     <select className="cityToSelect" onChange={event => this.props.selectCity(event.target.value)}>
                         {this.showCitiesToSelect()}
                     </select>

@@ -46,7 +46,7 @@ class App extends React.Component<RouteComponentProps, IState> {
                 })
             })
         })
-        this.setState({ 
+        this.setState({
             settings: (await getConfig()),
             movieDays: movieDays
         });
@@ -89,16 +89,18 @@ class App extends React.Component<RouteComponentProps, IState> {
         console.log(movieDays);
         return (
             <div>
-                <SelectCity cities={this.state.cities} selectCity={this.selectCity} />
-                <SelectDate selectedDate={this.state.selectedDate} updateDate={this.handleDateChange}/>
-                <SearchBtn searchForMovies={this.searchForMovies}/>
+                <div className="select">
+                    <SelectCity cities={this.state.cities} selectCity={this.selectCity} />
+                    <SelectDate selectedDate={this.state.selectedDate} updateDate={this.handleDateChange} />
+                    <SearchBtn searchForMovies={this.searchForMovies} />
+                </div>
                 <div>
                     {
                         this.state.showMovies ?
 
-                        <MovieList movieList={this.state.movies} showMovies={this.state.showMovies} selectedCity={this.state.selectedCity} selectedDate={this.state.selectedDate}/>
+                            <MovieList movieList={this.state.movies} showMovies={this.state.showMovies} selectedCity={this.state.selectedCity} selectedDate={this.state.selectedDate} />
 
-                        :null
+                            : null
                     }
                 </div>
                 {/* <Parent /> */}

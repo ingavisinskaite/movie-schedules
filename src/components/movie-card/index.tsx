@@ -1,52 +1,24 @@
 import React from 'react';
 import './style.less'
 import {Movie} from '../../models/movieDay';
+import {formatTime} from '../../services/calendarService';
 
-
-interface State {
-}
-
-interface Props {
+interface IProps {
     info: Movie;
  }
 
-
-class MovieCard extends React.Component<Props, State> {
-
-    constructor(props: Props) {
-        super(props);
-
-        this.state = {
-        };
-    }
-
-    formatTime(time: Date): string {
-        let date = new Date(time);
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let hoursStr = hours > 10 ? `${hours}` : `0${hours}`;
-        let minutesStr = minutes > 10 ? `${minutes}` : `0${minutes}`;
-        const movieTime = `${hoursStr}:${minutesStr} `;
-<<<<<<< HEAD:src/components/classComp/movie-card/index.tsx
-        
-=======
->>>>>>> 234ad34807855b313c4f9b070fd3ac9c8f4dc88c:src/components/movie-card/index.tsx
-        return movieTime;
-    }
-
-    render() {
+const MovieCard = (props: IProps) => {
         return (
             <div className="movie-card">
-               <h2>{this.props.info.title}</h2>
-               <img className="movie-img" src={this.props.info.imgSrc}></img>
+               <h2>{props.info.title}</h2>
+               <img className="movie-img" src={props.info.imgSrc}></img>
                {
-                   this.props.info.cinemaSchedules.map((cinema, index) => {
-                       return <div key={index}><p>{cinema.title}: {cinema.times.map(time => this.formatTime(time))}</p></div>
+                   props.info.cinemaSchedules.map((cinema, index) => {
+                       return <div key={index}><p>{cinema.title}: {cinema.times.map(time => formatTime(time))}</p></div>
                    })
                }
             </div>
         );
-    }
 }
 
 export default MovieCard;

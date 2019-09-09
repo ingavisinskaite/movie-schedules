@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less'
-import {Movie} from '../../../models/movieDay';
+import {Movie} from '../../models/movieDay';
 
 
 interface State {
@@ -20,14 +20,17 @@ class MovieCard extends React.Component<Props, State> {
         };
     }
 
-    formatTime(time: Date) {
+    formatTime(time: Date): string {
         let date = new Date(time);
         let hours = date.getHours();
         let minutes = date.getMinutes();
         let hoursStr = hours > 10 ? `${hours}` : `0${hours}`;
         let minutesStr = minutes > 10 ? `${minutes}` : `0${minutes}`;
         const movieTime = `${hoursStr}:${minutesStr} `;
+<<<<<<< HEAD:src/components/classComp/movie-card/index.tsx
         
+=======
+>>>>>>> 234ad34807855b313c4f9b070fd3ac9c8f4dc88c:src/components/movie-card/index.tsx
         return movieTime;
     }
 

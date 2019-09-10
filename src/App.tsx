@@ -8,7 +8,6 @@ import "./App.less";
 import SelectCity from "./components/select-city";
 import { MovieDay, Movie } from "./models/movieDay";
 import { getMovies } from "./services/movieService";
-import Parent from "./components/comp-interaction-example/parent";
 import MovieList from "./components/movie-list";
 import { isSameDay } from './services/calendarService'
 import { SelectDate } from "./components/select-date";

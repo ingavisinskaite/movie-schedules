@@ -25,6 +25,8 @@ interface IState {
 }
 
 class App extends React.Component<RouteComponentProps, IState> {
+    greeting = 'Find movies in your city!'
+
     readonly state: IState = {
         settings: {},
         movieDays: [],
@@ -88,6 +90,13 @@ class App extends React.Component<RouteComponentProps, IState> {
         console.log(movieDays);
         return (
             <div>
+                <div>
+                    {
+                        this.state.showMovies ?
+                        null :
+                        <h1 className="greeting">{this.greeting}</h1>
+                    }
+                </div>
                 <div className="select">
                     <SelectCity cities={this.state.cities} selectCity={this.selectCity} />
                     <SelectDate selectedDate={this.state.selectedDate} updateDate={this.handleDateChange} />

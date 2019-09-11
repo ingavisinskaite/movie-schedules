@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.less'
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
 
 interface Props {
     cities: Array<string>;   
@@ -28,7 +27,7 @@ class SelectCity extends React.Component<Props, {}> {
         return (
             <div>
                 <div>
-                    <select className="cityToSelect" onChange={event => this.props.selectCity(event.target.value)}>
+                    <select className="cityToSelect" onChange={(event: any) => this.props.selectCity(event.target.value)}>
                         {this.showCitiesToSelect()}
                     </select>
                 </div>

@@ -13,24 +13,17 @@ interface IProps {
 const MovieCard = (props: IProps) => {
 
     return (
-        <Router>
-            <div className="movie-card">
-                <h2>{props.info.title}</h2>
-                <Link to="/movie">
-                    <img className="movie-img" src={props.info.imgSrc}></img>
-                </Link>
-                {
-                    props.info.cinemaSchedules.map((cinema, index) => {
-                        return <div key={index}><p>{cinema.title}: {cinema.times.map(time => formatTime(time))}</p></div>
-                    })
-                }
-
-
-                <Route exact path="/movie" component={MoviePage} />
-
-            </div>
-        </Router>
-
+        <div className="movie-card">
+            <h2>{props.info.title}</h2>
+            <Link to="/movie">
+                <img className="movie-img" src={props.info.imgSrc}></img>
+            </Link>
+            {
+                props.info.cinemaSchedules.map((cinema, index) => {
+                    return <div key={index}><p>{cinema.title}: {cinema.times.map(time => formatTime(time))}</p></div>
+                })
+            }
+        </div>
     );
 }
 

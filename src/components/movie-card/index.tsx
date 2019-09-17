@@ -3,8 +3,6 @@ import './style.less'
 import { Movie } from '../../models/movieDay';
 import { formatTime } from '../../services/calendarService';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import MoviePage from '../movie-page';
-
 
 interface IProps {
     info: Movie;
@@ -15,7 +13,7 @@ const MovieCard = (props: IProps) => {
     return (
         <div className="movie-card">
             <h2>{props.info.title}</h2>
-            <Link to="/movie">
+            <Link to={"/movies/" + props.info.title}>
                 <img className="movie-img" src={props.info.imgSrc}></img>
             </Link>
             {

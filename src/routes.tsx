@@ -7,7 +7,7 @@ import MoviePage from "./components/movie-page";
 const Routes = () => (
     <Switch>
         <Route exact path="/" component={App} />
-        <Route exact path="/movie" component={MoviePage}/>
+        <Route path="/movies/:title" component={(props: any) => <MoviePage title={props.match.params.title}/>}/>
     </Switch>
 );
 

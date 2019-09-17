@@ -1,16 +1,30 @@
+
 import React from 'react';
-import './style.less';
+import './style.less'
 
-interface IProps {
 
-}
+interface Props {
+    title: string;
+ }
 
-const MoviePage = (props: IProps) => {
-    return (
-        <div>
-            <h1>This is a movie</h1>
-        </div>
-    )
+
+class MoviePage extends React.Component<Props, {}> {
+
+    constructor(props: Props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        console.log(this.props.title)
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>{this.props.title}</h1>
+            </div>
+        );
+    }
 }
 
 export default MoviePage;
